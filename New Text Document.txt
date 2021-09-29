@@ -1,0 +1,456 @@
+9                                                    (--------------21/09/2021---------------)
+--React js  is based on java script
+--less lerning curve
+--we can use third party library (most of time we have to  go for third party library its a disadvantage of react)
+--react js library uses virtual DOM or react DOM=>?
+
+*react is a library
+*single page appalication (Reacts)
+* while using the funcanality of the appalication it won't refreh 
+   react use for both
+* to make single page appalication we use routing 
+* react can be used for single page appalication 
+* Most of the single pages will have one html file 
+* page should hot refresh when you navigaet inside same appalication
+ 
+To start with react we should use two library
+1) React library        (JS)
+2) React Dom library    (JS)
+
+3)what is CDN link (two cdn lick of js)
+4)what is min.css
+  minified version of css to (minimise the page loading condation it will be minified)
+
+official link of js (react.org)
+
+why react js but not angular ?
+
+why we need react library and DOM library
+
+                                            (--------------------------22/09/2021---------------------)
+
+--->to creat react element we need react library(React.creatElement)
+--->to render the element that your are created in virtul use react dom element(ReactDom.render)
+--->virtul dom takes the react element to the real DOM(Document object model)
+    take two parameter 
+1 prameter-what you want render
+2 where do you want render this element 
+
+props--combinaion of children and attributes (2nd and 3rd parameter in creat element ) 
+react element is javascript object.each children are react element 
+js people take this object and creat virtual dom element then later react library will update
+real dom element 
+props can take any negative value that can be primitives and refrence
+
+when you are looping through array of elements
+
+In react when you want to loop use map method 
+
+3) Diffing algorithm- this code will compare the two virtul ie., virtul dom older one and updated virtul dom 
+    (time complexity --how much time it takes  and space complexity---number of space required)
+  diffing algorithm used to compare virtual DOM, Updated virtul DOM and real DOM which takes less time
+ 
+(Read diffing Algorithm)!
+
+ Key attribute is added so that the comparision becoms easizer
+
+   JSX---Javascript + XML (Extention of javascript)
+   const element = <h1> Hello world</h1> ==> (const element= React.createElement('h1', {id:demo} 'Helloworld')
+                (JSX)                                     ()                           (id:demo=value can be any primitive or refrence type)
+
+  Babel---(all the process does not support code b/s of versions like ES6 ES5) it will convert it in to a version so that which all the browser can understand 
+        and it will convert JSX element to react element 
+only in case when you are writing jsx if it includes javascript code the this js code should be written in side{}, when we write 
+
+components--- it is also a piece of code --creat the component once and reuse the code again and agian 
+** Alway start component with capital word (if you writ in lower case it will try consider as DOM element)
+In js we have 1)class component 
+              !2)finctional components---we  must use only it or most the time we use functional component. 
+                 [class header extends React.component---then class will become reat component]
+             render(){
+                       return <h1>header</h1>
+                      }
+In class component we have to use this key word to access this.props.fristName
+using props in class component and function component  prps.fristName
+
+
+http://127.0.0.1:5500/jsx/jsx.html
+http://127.0.0.1:5500/JSX/JSX.html
+http://localhost:5500/jsx.html
+
+                                                        (---------------23/09/2021-----------------)
+Installation of node js
+creating frist app----by using cmd ---(npx create-react-app frist-app----cd frist-app-----npm start)
+
+ Local: http://localhost:3000
+  On Your Network:  http://192.168.43.129:3000
+
+* sate variable in class component 
+* props cannot be changed it's just a read only property.props are immutable
+* In class components we can directly write the methods
+*  when ever you access the method are property in class component you should use (this.)
+constructor (){
+}--
+  when ever you extend an class you should pass supper inside constructure
+  bind method will creat a copy of function, methods and arrars strings
+
+ *supper--- it will call the super class constructur 
+  properties and methods initalized in supper class it  will be inherited to sub class
+
+* when ever you want to change the data dinamically we have to use the state
+   by initilizing state with object ie.,{"",} or inside constructur
+   constructur(){
+   this.state{
+   fristb name :"Ajay" 
+}  
+when ever you loop it use key word 
+  - we should never used this.state.fristname ="vijay" to change or mutate the state name insted of that 
+     method setState ({fristName:""vijay})
+   state is for class component
+
+INTERVIEW QUESTION
+
+React-Before-16.8vs
+==>state component (state full component)
+  * class components have state  
+  * Life cycle(and life cycel methods)
+  * because of state, dynamically we can change
+  * return method
+  * class extends recet.components 
+  * we should use this key word to access props(we have constructur components)
+  * state full component
+
+==>function component (another name state less component)
+  * Dosen't have state component 
+  * there is no life cycle methods 
+  * life cycle methods are not present
+  * no state no dynamic activity 
+  * no constructon components
+  * another name state less component
+  
+-- After 16.8vs functional components have state components all 
+    
+  <people/>----component
+  we can call child component inside the parent component by passing "<componentname/>" inside parent component 
+  when ever you want pass the data from parent to child use props
+
+(------------24/09/2021-----------)
+
+ todo list
+
+  passing data from child to parent
+ * creat a function in parent component 
+ * pass the function as a props to child component
+ * call the function in child component using props and pass the parameter
+                           or
+ * In the parent component, create a callback function. ...
+ * Pass the callback function to the child as a props from the parent component.
+ * The child component calls the parent callback function using props and passes the data to the parent component.
+
+WHAT IS THE USE OF STATE AND setState
+
+state should away be an object
+!setState()
+
+INTERVIEW QUESTION
+
+props 
+*props are immutable 
+*props are read only
+*props can be passed to to child component and can be used
+*
+
+
+state
+-states are mutable
+--if state is in present in parent component  cannot pass if you want to pass to child component then it should be passed through props (state as a props) and this state cannot be changed by child component 
+  state can only be modified in the state where it is declered(if we want to mutate you should mutate in same com  ponent )
+--state is asynchronous
+  locally scoped
+
+interview question 
+ !set state is ascynchroners
+-setState is used to update the state
+-setState with asynh and awite 
+
+INTERVIEW QUESTION
+
+What is life cycle? where there is a start and end 
+
+----component also have life cycle 
+     
+ classs component 
+
+    class component has three phase:-
+ ==>mounting phase(mounting to )--constructur is the frist method that is getting executed (
+     what you do in constructue
+     * initilization
+     * bind the method )
+     *  we should not make any side effect ---(side effect ie., we should not upmdate dom, making API call ))
+
+ ==>we should use static methods---getDerivedStateFromProps(static,state)
+     * we can return getDerivedStateFromProps to change state or update
+     --never do setState inside render method [render method comes after (getDerivedStateFromProps)] we can return null here
+       |
+    [render]
+       | after render only DidMount come in to pitcher
+==> componentDidMount
+    *we scan do side effect 
+    *update state (up dating your dom,making api calls )
+
+2)updating phase(it will also execute props)
+ ===> getDerivedStateFromProps ---it is the frist method will be executed
+  when this will come in to pitcher means when ever you change state using set state 
+ ===>shouldComponentUpdate (for this method you can return either true false. by default it is true)
+     if true is executed from shouldComponentUpdate it will execute render method other wise it will stop.
+     (most of the time it will be false)
+                   |
+                 render
+                   |
+                   |
+===>getSnapshotBeforUdate(previousprops,previousstate) befor up dating the realDOM it excuted executly just befor the render method.  (here you can return  data and this will be passsed as a third parament to componentDid update)
+===>componentDidMountUpdate (here you can do side efffects and interact with real DOM )
+   (previousprops,previousstate)(previousprops,previousstate)
+  
+
+
+3)unmounting phase
+===>componentWillUnmount
+
+ here we do all the cleaning process,detach event (login and log out is the example)
+
+(---------------27-09-2021-----------)
+
+how to creat the state 
+ out side constructor use ---just --state{}
+ inside connstructor use  this.state{}
+ to combine tow object use spread operator
+
+
+ 16.8vs
+state in functional componens
+  
+!!!!!!!!!!!!!  interview Question
+React hooks is only used for functional component not for class
+
+!React Hooks----nothig but basic plain javascript function 
+ 
+how do we creat sate in component ===using functional component ------->
+ const myState = React.useState (u can pass initial state it can be strig object number ... any primitive and refrence )
+                                  (in class component only objects are passed)
+const nameSate = React.useState ("Ajith")
+ new state return an array [state, function] --- FUNCTION IS USED TO UP DATE THE STATE
+                indexNumber   0       1 
+        0 index is always have state 
+        1 is the function use to update the state
+ const [name, setname] = react.useState("ajith")
+       if u want to update call setName="murali"
+       ex if age   setAge =23
+    in functional component we can use any number of state but in class componen we should use only one  
+ex const [age, setage] = react.useState("ajith")
+const [person, setperson] = react.useState("{fristName}")
+
+!!!with object 
+
+when you are doing setState in function it will update only the key which your updated but remaning will not and it will delet there it sefl
+***intrnally in  setState, spread operatror happens 
+ but setSate in function for object while updating the object  wes should use spraed operator if not it will up date only the updated pointed key---
+
+synthatic event-----
+
+preventDefault---prevent the default behaviour of your HTML (LIKE ANCHOT tag,p ,h ,a)
+
+
+                                                     (---------basic coverd up to Now--------------) 
+
+two way data binding is not there in reactue to 
+for two way data banging 
+bind the value to object and
+ on change event update valuet to object
+
+onChange event
+event.tagret.value-----to take data from inout in js 
+
+
+project
+
+>node-modules
+>public 
+   |__favicon.ico
+   |
+   |__index.html
+>scr
+  |___App.css
+  |___App.js
+  |___App.text.js
+  |___index.css
+  |___index.js
+
+*gitignore
+*package-lock.json
+*packege.json
+*README.md
+
+to work with react we need these three library
+ 1)react library
+ 2)React Dom
+ 3)Babel
+
+  when ever we use npx and creat project all packeg will pe there 
+
+>>>node-modules--which includes all the library
+>>>public --all the static files will be present inside this folder ex:-index.html
+
+...>>> git-inore--> all the node module will be here it will push the src file 
+      *** node models will not be pushed for git
+...>>>package.lock.json-- json is automatically generated for any operations where npm modifies either the node_modules tree, or package. json 
+                          (it is created dependent on pakage.json)   it will be having detailed information like 
+...>>>pakage.json-->  consist of bascic info of projectall the dependence will be present inside the project (all packeges and its version detalis of app )
+
+when you downlode the project from git you will be not having node-model ,in cmd
+-->>>>(npm install or npm i) if u dint have node module use this code to generate ---node module will be created based on the libarary and version 
+...>>>package-lagljson- will have all the information of json 
+...>>>README.MD--WILL HAVE INFROMATION OF THE PROJECT gvrn by the developer
+
+* src---->>> all the javascript code html and css dynamic code where Be will write here.
+
+--app.test.js---here we write the test cases
+   we write one file for one component 
+---index.css 
+
+---indx.html>
+
+(./) means current directory
+
+npm strats 
+ react-scripts start--->src--->html--->js-->components 
+
+                                       (----------------------28/09/2021---------------------------)
+
+src
+   |__component
+              |
+              |__userform
+              |     |______userform.js
+              |     |______userform.css
+              |
+              |
+              |___user table
+                      |
+                      |___usertable.js
+                      |
+                      |___usertable.css
+
+
+exporting the component (when you export it is not necessary to import )
+
+        a.js                                     b.js
+function sum {                          import sum from"./a.js" (when it is default )
+                                        import a from "./js" (in 'sum' variable you can give any name )                                 
+}
+
+export sum (normal:it will export as an object each will be specified with key value )
+            (while importing non default it should de structur and use . same name should be given or you can give alliyas name,but while in programinig you should these name and {}should be used )
+eport default sum(default export, to whole file there should be only one default export )
+
+***any primitive and refrence can be export
+***when you import in library no need to give name just give (import React from 'react')
+***recat is the default export
+./ current direectory
+** other than default export call in curly breces 
+
+
+importing the component 
+
+shortcut
+rfc---to react function component here export default will be created at the top
+rfce--to react function component (e export default come down)
+rcc---react class component here export default will be created at the top
+rce---rect class component and (e export default come down)
+imr---import from react
+imrc---import react from component 
+imbrc---
+
+
+Always keep the state at the top level
+
+(react-router-dom) prevent refreshing in achor tag
+npm i-react-router-dom
+npm i --save react-router-dom
+
+
+react router 
+ link
+ route
+ browser router
+*insted of anchor tag use link tag  (that browser will not refresh does not have href attribute insted we have to="/____")
+*<Route path="/" component={Home}> meaning
+ when path is / about then load this about component 
+*all routing should be enclosed with browser router <BrowserRouter></BrowserRouter>
+* we creat saperate file router.js
+*exact--it will match exactly the attribute
+
+HOC--Higher order component withRouter(component)
+while exporting you shold export with router
+
+
+
+(-------29/09/2021-------)
+steps=---check the version of git  in cmd====>  git --version
+
+windows up date should be complited 
+
+sorce code --->cmd--->
+1) creat folder
+2) in cmd type (git init)---- which will creat .git in folder
+3)git config --global user.email "you@example.com"---(write your email without "" )
+  git config --global user.name "Your Name"---(write your git name without "" )
+4)git add "New Text Document.txt"(with in "" write your folder name )
+5)git commit -m "add" (with in "" write any name)
+6)git status (check for git status)
+7)Repository name in git web--- here we get an url------ this url shoul be loaded in cmd like below
+8)git remote add origin (Url) ----https://github.com/Muralidharab/folder.git
+9)git push -u origin master  (here the folder is pushed )
+10)git add . or git add *.* (it will take multipal files and and changes)
+
+--->file--->git add fristfile.txt--> check git status ie.,--->git commit -m--->
+
+master branch
+     |
+     |__freature branch
+
+git branch "branch name"
+git checkout "branch "(switching for main branch)
+git commit -m "message"      [add,commit]
+git checkout   master/main
+gti push -u origin <branch>
+git merge
+
+clone---
+git clone https://github.com/masifansari/ems.git
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+
+  
+                 
+ 
